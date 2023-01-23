@@ -8,7 +8,7 @@ image:
   repository: aencinas19/vnf-img
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "registry"
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
