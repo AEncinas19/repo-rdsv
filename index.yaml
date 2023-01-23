@@ -3,7 +3,7 @@ entries:
   accesschart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-21T16:33:36.039016853+01:00"
+    created: "2023-01-23T09:53:14.534243422+01:00"
     description: A Helm chart for Kubernetes
     digest: fb186dd1d5fa06b486d22eebeeb2299e0ce7d0139b78b9950dcb4a36a9bd2155
     name: accesschart
@@ -11,10 +11,21 @@ entries:
     urls:
     - https://aencinas19.github.io/repo-rdsv/accesschart-0.1.0.tgz
     version: 0.1.0
+  arpwatch:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-01-23T09:53:14.534607963+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 1151af693fa089abce8a3592091a0504d3f90b56772cecbe018d923ec55e176f
+    name: arpwatch
+    type: application
+    urls:
+    - https://aencinas19.github.io/repo-rdsv/arpwatch-0.1.0.tgz
+    version: 0.1.0
   cpechart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-21T16:33:36.039389207+01:00"
+    created: "2023-01-23T09:53:14.534941793+01:00"
     description: A Helm chart for Kubernetes
     digest: d004076bed8f07c8db12cb78abe97fd1ce833a63204b3a37494cf3a3758e2be9
     name: cpechart
@@ -22,4 +33,4 @@ entries:
     urls:
     - https://aencinas19.github.io/repo-rdsv/cpechart-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-21T16:33:36.034483727+01:00"
+generated: "2023-01-23T09:53:14.523372776+01:00"
