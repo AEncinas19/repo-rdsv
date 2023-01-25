@@ -4,7 +4,11 @@
 
 replicaCount: 1
 
-image: 192.168.56.11:32000/vnf-image:registry
+image:
+  repository: 192.168.56.11:32000/vnf-image
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "registry"
 
 imagePullSecrets: []
 nameOverride: ""
