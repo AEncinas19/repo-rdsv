@@ -3,6 +3,7 @@ entries:
   accesschart:
   - apiVersion: v2
     appVersion: 1.16.0
+<<<<<<< HEAD
     created: "2023-01-28T14:15:59.811206214+01:00"
     description: A Helm chart for Kubernetes
     digest: ea0ba5e5ff2cdc4ab0c370ce4371e9729f6fbf313cd6688c8be42d752b748ff9
@@ -10,10 +11,20 @@ entries:
     type: application
     urls:
     - https://AEncinas19.github.io/repo-rdsv/accesschart-0.1.0.tgz
+=======
+    created: "2023-01-26T18:17:52.546103848+01:00"
+    description: A Helm chart for Kubernetes
+    digest: f2eac429c2863d067ebf9784ec53d6aab4c3fb99c360a1613fe9b473bf524632
+    name: accesschart
+    type: application
+    urls:
+    - https://AEncinas19-git.github.io/repo-rdsv/accesschart-0.1.0.tgz
+>>>>>>> bb27bd6dcfc80e532a581fc4f25989526b0b9c73
     version: 0.1.0
   arpwatch:
   - apiVersion: v2
     appVersion: 1.16.0
+<<<<<<< HEAD
     created: "2023-01-28T14:15:59.811533933+01:00"
     description: A Helm chart for Kubernetes
     digest: d2a48729e85ab945bbdf397d8300f75e424d576e42c5e2158cb15bea6350d9c8
@@ -21,10 +32,20 @@ entries:
     type: application
     urls:
     - https://AEncinas19.github.io/repo-rdsv/arpwatch-0.1.0.tgz
+=======
+    created: "2023-01-26T18:17:52.547139764+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 09a88f7bc13a6089bdac4782eccf11eed6c4ee4919a1896bd7c36db7574006cb
+    name: arpwatch
+    type: application
+    urls:
+    - https://AEncinas19-git.github.io/repo-rdsv/arpwatch-0.1.0.tgz
+>>>>>>> bb27bd6dcfc80e532a581fc4f25989526b0b9c73
     version: 0.1.0
   cpechart:
   - apiVersion: v2
     appVersion: 1.16.0
+<<<<<<< HEAD
     created: "2023-01-28T14:15:59.811880243+01:00"
     description: A Helm chart for Kubernetes
     digest: bf79902ab7243966fea25f727eae245ee8aa640aad5cdff04c52d2338f47e9a6
@@ -34,3 +55,14 @@ entries:
     - https://AEncinas19.github.io/repo-rdsv/cpechart-0.1.0.tgz
     version: 0.1.0
 generated: "2023-01-28T14:15:59.810761831+01:00"
+=======
+    created: "2023-01-26T18:17:52.548444254+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 1e4f23b66318e4c6a0431dcb28b4026ffbca4329bc2e3bf50d93f13717f875aa
+    name: cpechart
+    type: application
+    urls:
+    - https://AEncinas19-git.github.io/repo-rdsv/cpechart-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-01-26T18:17:52.544721244+01:00"
+>>>>>>> bb27bd6dcfc80e532a581fc4f25989526b0b9c73
