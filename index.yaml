@@ -3,34 +3,23 @@ entries:
   accesschart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-28T15:53:22.526922456+01:00"
+    created: "2023-02-09T11:41:14.331074326+01:00"
     description: A Helm chart for Kubernetes
-    digest: 56b759cb8eceac67f82f32f088665e4e32daf97249df0b10491ad1b1719b3754
+    digest: aff6a0ee5743412aa6fcea6d880f2e80ac2123ec8290fa75330affcdcd7d9187
     name: accesschart
     type: application
     urls:
-    - https://AEncinas19.github.io/repo-rdsv/accesschart-0.1.0.tgz
-    version: 0.1.0
-  arpwatch:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2023-01-28T15:53:22.527258712+01:00"
-    description: A Helm chart for Kubernetes
-    digest: bf912a6969186cca524329ec8f43e5af08bc6be95a0d5c9f6989ba93dc5c8e3b
-    name: arpwatch
-    type: application
-    urls:
-    - https://AEncinas19.github.io/repo-rdsv/arpwatch-0.1.0.tgz
+    - https://cuenta-git.github.io/repo-rdsv/accesschart-0.1.0.tgz
     version: 0.1.0
   cpechart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-28T15:53:22.527592616+01:00"
+    created: "2023-02-09T11:41:14.333568885+01:00"
     description: A Helm chart for Kubernetes
-    digest: 4f2174d4464692aae2a6396c11900e1f0ae5ab05dbc83fdd8b31bf0d43cdceeb
+    digest: b0d24c29439eee74d9cc2c44f741cb9b755ce7754b3cec32acf467f09e00031e
     name: cpechart
     type: application
     urls:
-    - https://AEncinas19.github.io/repo-rdsv/cpechart-0.1.0.tgz
+    - https://cuenta-git.github.io/repo-rdsv/cpechart-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-28T15:53:22.526464898+01:00"
+generated: "2023-02-09T11:41:14.32984774+01:00"
