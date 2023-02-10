@@ -9,7 +9,7 @@ entries:
     name: accesschart
     type: application
     urls:
-    - https://cuenta-git.github.io/repo-rdsv/accesschart-0.1.0.tgz
+    - https://aencinas19.github.io/repo-rdsv/accesschart-0.1.0.tgz
     version: 0.1.0
   cpechart:
   - apiVersion: v2
@@ -20,6 +20,6 @@ entries:
     name: cpechart
     type: application
     urls:
-    - https://cuenta-git.github.io/repo-rdsv/cpechart-0.1.0.tgz
+    - https://aencinas19.github.io/repo-rdsv/cpechart-0.1.0.tgz
     version: 0.1.0
 generated: "2023-02-09T11:41:14.32984774+01:00"
