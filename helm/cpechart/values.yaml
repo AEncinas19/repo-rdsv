@@ -11,12 +11,12 @@ containers:
       pullPolicy: Always
       # Overrides the image tag whose default is the chart appVersion.
       tag: "latest"
-  #- name: router
-    #image:
-      #repository: aencinas19/router
-      #pullPolicy: Always
+  - name: router
+    image:
+      repository: aencinas19/vnf-img
+      pullPolicy: Always
       # Overrides the image tag whose default is the chart appVersion.
-      #tag: "latest"
+      tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
