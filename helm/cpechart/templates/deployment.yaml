@@ -26,14 +26,16 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
+      {{- range $index, $container := .Values.containers}}
+        - name: {{ .container.Name }}
           securityContext:
             capabilities:
               add: ["NET_ADMIN"]
             privileged: true
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .container.image.repository }}:{{ .container.image.tag | default .Chart.AppVersion }}"
           command: ["sh", "-c", "tail -f /dev/null"]
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          imagePullPolicy: {{ .container.image.pullPolicy }}
+      {{- end}}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
