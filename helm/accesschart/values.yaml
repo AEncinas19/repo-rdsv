@@ -38,7 +38,13 @@ securityContext: {}
 
 service:
   type: NodePort
-  port: 80
+  ports: 
+    - name: default
+      port: 80
+    - name: prom_node_exporter
+      port: 91000
+      targetPort: 9100
+      nodePort: 30001
 
 ingress:
   enabled: false
