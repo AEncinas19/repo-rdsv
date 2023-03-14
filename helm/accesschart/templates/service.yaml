@@ -8,12 +8,12 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - name: http
-      port: {{ .Values.service.ports[0].port }}
+      port: {{ index .Values.service.ports 0 "port" }}
       targetPort: http
       protocol: TCP
     - name: prom_node_exporter
-      port: {{ .Values.service.ports[1].port}}
-      targetPort: {{ .Values.service.ports[1].targetPort }}
-      nodePort: {{ .Values.service.ports[1].nodePort }}
+      port: {{ .Values.service.ports 1 "port"}}
+      targetPort: {{ .Values.service.ports 1 "targetPort" }}
+      nodePort: {{ .Values.service.ports 1 "nodePort" }}
   selector:
     {{- include "accesschart.selectorLabels" . | nindent 4 }}
