@@ -13,10 +13,10 @@ containers:
       tag: "latest"
   - name: router
     image:
-      repository: aencinas19/vnf-img
+      repository: ghcr.io/nokia/srlinux
       pullPolicy: Always
       # Overrides the image tag whose default is the chart appVersion.
-      tag: "latest"
+      tag: "22.11.1"
 
 imagePullSecrets: []
 nameOverride: ""
