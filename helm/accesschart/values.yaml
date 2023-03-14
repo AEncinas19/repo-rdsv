@@ -43,7 +43,7 @@ service:
       port: 80
     - name: prom_node_exporter
       port: 91000
-      targetPort: 9100
+      targetPort: 91000
       nodePort: 30001
 
 ingress:
