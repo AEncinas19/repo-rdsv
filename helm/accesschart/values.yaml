@@ -44,7 +44,7 @@ service:
     - name: prom-node-exporter
       port: 9100
       targetPort: 9100
-      nodePort: 30001
+      nodePort: 32300
 
 ingress:
   enabled: false
