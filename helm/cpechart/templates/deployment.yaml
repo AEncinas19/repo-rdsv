@@ -49,9 +49,6 @@ spec:
           imagePullPolicy: Always
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          volumeMounts:
-          - name: topology
-            mountPath: /tmp/topology.yml
           env:
           - name: USER_ID
             valueFrom:
@@ -61,14 +58,6 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.gid
-      volumes: 
-      - name: topology
-        configMap:
-          name: topology-config
-          items:
-          - key: topology.yml
-            path: topology.yml
-
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
