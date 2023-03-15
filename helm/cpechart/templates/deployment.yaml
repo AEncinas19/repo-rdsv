@@ -46,6 +46,7 @@ spec:
           tty: true
           imagePullPolicy: Always
           volumeMounts:
+          - name: topology
             mountPath: /tmp/topology.yml
           volumes: 
           - name: topology
