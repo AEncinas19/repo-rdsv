@@ -48,13 +48,6 @@ spec:
           volumeMounts:
           - name: topology
             mountPath: /tmp/topology.yml
-          volumes: 
-          - name: topology
-            configMap:
-              name: topology-config
-              items:
-              - key: topology.yml
-                path: topology.yml
           env:
           - name: USER_ID
             valueFrom:
@@ -64,6 +57,14 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.gid
+      volumes: 
+      - name: topology
+        configMap:
+          name: topology-config
+          items:
+          - key: topology.yml
+            path: topology.yml
+
           
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
