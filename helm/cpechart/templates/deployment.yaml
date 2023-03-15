@@ -26,16 +26,44 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-      {{- range $index, $container := .Values.containers}}
-        - name: {{ $container.name }}
+        - name: knf
           securityContext:
             capabilities:
               add: ["NET_ADMIN"]
             privileged: true
-          image: "{{ $container.image.repository }}:{{ $container.image.tag }}"
+          image: "aencinas19/vnf-img"
           command: ["sh", "-c", "tail -f /dev/null"]
-          imagePullPolicy: {{ $container.image.pullPolicy }}
-      {{- end}}
+          imagePullPolicy: Always
+        - name: nokiasr
+          securityContext:
+            capabilities:
+              add: ["NET_ADMIN"]
+            privileged: true
+          image: "ghcr.io/nokia/srlinux:22.11.2"
+          command: ["sudo", "bash", "/opt/srlinux/bin/sr_linux"]
+          args: []
+          stdin: true
+          tty: true
+          imagePullPolicy: Always
+          volumeMounts:
+            mountPath: /tmp/topology.yml
+          volumes: 
+          - name: topology
+            configMap:
+              name: topology-config
+              items:
+              - key: topology.yml
+                path: topology.yml
+          env:
+          - name: USER_ID
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata-uid
+          - name: GROUP_ID
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.gid
+          
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

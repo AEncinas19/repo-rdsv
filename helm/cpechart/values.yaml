@@ -11,13 +11,25 @@ containers:
       pullPolicy: Always
       # Overrides the image tag whose default is the chart appVersion.
       tag: "latest"
+    volumeMounts: {}
+    volumes: {}
   - name: nokiasr
     image:
-      repository: aencinas19/router
+      repository: ghcr.io/nokia/srlinux
       pullPolicy: Always
       # Overrides the image tag whose default is the chart appVersion.
       tag: "latest"
-
+    volumeMounts: 
+      mountPath: /tmp/topology.yml
+    volumes:
+    - name: topology
+      configMap:
+        name: topology-config
+        items:
+        - key: topology.yml
+          path: topology.yml
+    
+    
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
