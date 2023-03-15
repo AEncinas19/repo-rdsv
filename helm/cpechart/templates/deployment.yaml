@@ -34,6 +34,8 @@ spec:
           image: "aencinas19/vnf-img"
           command: ["sh", "-c", "tail -f /dev/null"]
           imagePullPolicy: Always
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
         - name: nokiasr
           securityContext:
             capabilities:
@@ -45,6 +47,8 @@ spec:
           stdin: true
           tty: true
           imagePullPolicy: Always
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
           - name: topology
             mountPath: /tmp/topology.yml
@@ -65,9 +69,6 @@ spec:
           - key: topology.yml
             path: topology.yml
 
-          
-      resources:
-      {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
