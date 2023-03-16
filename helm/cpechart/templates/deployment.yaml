@@ -36,6 +36,28 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+        - name: nokiasr
+          securityContext:
+            capabilities:
+              add: ["NET_ADMIN"]
+            privileged: true
+          image: "ghcr.io/nokia/srlinux:22.11.2"
+          command: ["sudo", "bash", "/opt/srlinux/bin/sr_linux"]
+          args: []
+          stdin: true
+          tty: true
+          imagePullPolicy: Always
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          env:
+          - name: USER_ID
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.uid
+          - name: GROUP_ID
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.gid
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
