@@ -31,9 +31,9 @@ spec:
             capabilities:
               add: ["NET_ADMIN"]
             privileged: true
-          image: "aencinas19/vnf-img"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           command: ["sh", "-c", "tail -f /dev/null"]
-          imagePullPolicy: Always
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
         - name: nokiasr

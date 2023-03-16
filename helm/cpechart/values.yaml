@@ -4,30 +4,11 @@
 
 replicaCount: 1
 
-containers:
-  - name: knf
-    image:
-      repository: aencinas19/vnf-img
-      pullPolicy: Always
-      # Overrides the image tag whose default is the chart appVersion.
-      tag: "latest"
-    volumeMounts: {}
-    volumes: {}
-  - name: nokiasr
-    image:
-      repository: ghcr.io/nokia/srlinux
-      pullPolicy: Always
-      # Overrides the image tag whose default is the chart appVersion.
-      tag: "latest"
-    volumeMounts: 
-      mountPath: /tmp/topology.yml
-    volumes:
-    - name: topology
-      configMap:
-        name: topology-config
-        items:
-        - key: topology.yml
-          path: topology.yml
+image:
+  repository: aencinas19/vnf-img
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
     
     
 imagePullSecrets: []
