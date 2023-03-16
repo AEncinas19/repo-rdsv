@@ -53,7 +53,7 @@ spec:
           - name: USER_ID
             valueFrom:
               fieldRef:
-                fieldPath: metadata-uid
+                fieldPath: metadata.uid
           - name: GROUP_ID
             valueFrom:
               fieldRef:
