@@ -49,15 +49,6 @@ spec:
           imagePullPolicy: Always
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          env:
-          - name: USER_ID
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.uid
-          - name: GROUP_ID
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.gid
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
