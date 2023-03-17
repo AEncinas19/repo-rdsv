@@ -48,7 +48,7 @@ spec:
           tty: true
           imagePullPolicy: Always
           resources:
-            {{- toYaml .Values.resources | nindent 12 }
+            {{- toYaml .Values.resources | nindent 12 }}
           env:
           - name: USER_ID
             valueFrom:
