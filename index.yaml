@@ -3,7 +3,7 @@ entries:
   accesschart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-03-16T10:22:18.150792263+01:00"
+    created: "2023-03-17T09:58:49.133190645+01:00"
     description: A Helm chart for Kubernetes
     digest: be22008082911007643877cbc68a6f176d01d36e87c5a4203ea23ec7f7059d62
     name: accesschart
@@ -14,12 +14,12 @@ entries:
   cpechart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-03-16T10:22:18.151127635+01:00"
+    created: "2023-03-17T09:58:49.133509134+01:00"
     description: A Helm chart for Kubernetes
-    digest: 1697118ee8f0ba37788fb2a21cbec0b1cb2d5ff23bdac9edc7ee23be8daf95c8
+    digest: a2d5bac8176a62c777faec1fdff6a2cde8f317348f6725a56ef6994481c43eea
     name: cpechart
     type: application
     urls:
     - https://aencinas19.github.io/repo-rdsv/cpechart-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-16T10:22:18.150343094+01:00"
+generated: "2023-03-17T09:58:49.132497557+01:00"
