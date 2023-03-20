@@ -3,7 +3,7 @@ entries:
   accesschart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-03-20T09:35:19.797024739+01:00"
+    created: "2023-03-20T11:22:55.141130385+01:00"
     description: A Helm chart for Kubernetes
     digest: 0f7423bf1ba178e9bda489f857f58a95dab035eb50a0647e6d05941e0e84c1f6
     name: accesschart
@@ -14,7 +14,7 @@ entries:
   cpechart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-03-20T09:35:19.797536904+01:00"
+    created: "2023-03-20T11:22:55.141441415+01:00"
     description: A Helm chart for Kubernetes
     digest: 45ae4bc3c9d0d693d0bb373dee9fbe75da5bdd98c9ea8a824325180080b39d72
     name: cpechart
@@ -22,4 +22,15 @@ entries:
     urls:
     - https://aencinas19.github.io/repo-rdsv/cpechart-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-20T09:35:19.796313113+01:00"
+  router:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-03-20T11:22:55.141752573+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 0a4e0a6f51c1d5f27a55b5f858552f9284613e6688eaf183d63ac119916784fc
+    name: router
+    type: application
+    urls:
+    - https://aencinas19.github.io/repo-rdsv/router-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-03-20T11:22:55.14069792+01:00"
