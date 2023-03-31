@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/nokia/srlinux
+  repository: 192.168.56.11:32000/ceos
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "22.11.2"
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
