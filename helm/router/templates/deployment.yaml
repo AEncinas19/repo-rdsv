@@ -62,6 +62,14 @@ spec:
               value: "1"
             - name: MGMT_INTF
               value: eth0
+          volumeMounts:
+            - name: config-volume
+              mountPath: /mnt/flash/startup-config
+              subpath: startup-config.cfg
+      volumes:
+        - name: config-volume
+          hostPath:
+            path: ./startup-config.cfg
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
