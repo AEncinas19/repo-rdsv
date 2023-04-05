@@ -65,8 +65,8 @@ spec:
               mountPath: /mnt/flash/startup-config.cfg
       volumes:
         - name: config-volume
-          hostPath:
-            path: ~/TFM/AristacEOS/startup-config.cfg
+          hostPath: ./
+            path: /../../../startup-config.cfg
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
