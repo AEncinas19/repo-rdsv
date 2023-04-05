@@ -56,8 +56,6 @@ spec:
               value: "1"
             - name: EOS_PLATFORM
               value: ceoslab
-            - name: container
-              value: docker
             - name: MAPETH0
               value: "1"
             - name: MGMT_INTF
