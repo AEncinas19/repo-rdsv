@@ -38,6 +38,8 @@ spec:
             - "systemd.setenv=ETBA=1"
             - "systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT=1"
             - "systemd.setenv=CEOS=1"
+            - "systemd.setenv=EOS_PLATFORM=Docker"
+            - "systemd.setenv=container=docker"
             - "systemd.setenv=MAPETH0=1"
             - "systemd.setenv=MGMT_INTF=eth0"
           stdin: true
@@ -55,7 +57,9 @@ spec:
             - name: CEOS
               value: "1"
             - name: EOS_PLATFORM
-              value: ceoslab
+              value: Docker
+            - name: container
+              value: docker
             - name: MAPETH0
               value: "1"
             - name: MGMT_INTF
