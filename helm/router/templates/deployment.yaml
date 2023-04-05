@@ -68,7 +68,7 @@ spec:
       volumes:
         - name: config-volume
           hostPath:
-            path: ../../../startup-config.cfg
+            path: ./../../../startup-config.cfg
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
