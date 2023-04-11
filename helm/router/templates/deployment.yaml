@@ -15,12 +15,12 @@ spec:
     metadata:
       annotations:
         k8s.v1.cni.cncf.io/networks: extnet1@eth2
-	k8s.v1.cni.cncf.io/networks: '[
-            {
-              "name": "podnet@eth1",
-              "ips": ["10.0.0.2/24"]
-            }
-          ]'
+        k8s.v1.cni.cncf.io/networks: '[
+          {
+            "name": "podnet@eth1",
+            "ips": ["10.0.0.2/24"]
+          }
+        ]'
       labels:
         {{- include "cpechart.selectorLabels" . | nindent 8 }}
     spec:
