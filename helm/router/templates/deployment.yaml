@@ -72,11 +72,11 @@ spec:
               value: eth0
           volumeMounts:
             - name: config-volume
-              mountPath: /mnt/flash
+              mountPath: /mnt/flash/
       volumes:
         - name: config-volume
           hostPath: 
-            path: /TFM/AristacEOS/startup-config.cfg
+            path: /TFM/AristacEOS/
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
