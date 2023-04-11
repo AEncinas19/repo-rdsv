@@ -20,7 +20,7 @@ spec:
               "name": "podnet@eth1",
               "ips": ["10.0.0.1/24"]
             }
-    ]'
+          ]'
       labels:
         {{- include "accesschart.selectorLabels" . | nindent 8 }}
     spec:
