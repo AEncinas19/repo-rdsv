@@ -77,7 +77,6 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: /mnt/flash/startup-config.cfg
-              subPath: startup-config.cfg
       volumes:
         - name: config-volume
           hostPath:
