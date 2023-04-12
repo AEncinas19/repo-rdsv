@@ -17,7 +17,7 @@ spec:
         k8s.v1.cni.cncf.io/networks: extnet1@eth2
         k8s.v1.cni.cncf.io/networks: '[
           {
-            "name": "podnet@eth1",
+            "name": "podnet",
             "ips": ["10.0.0.2/24"]
           }
         ]'
