@@ -79,8 +79,8 @@ spec:
               mountPath: /mnt/flash/
       volumes:
         - name: config-volume
-          hostPath: 
-            path: /TFM/AristacEOS
+          configMap:
+          name: arista-conf
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
