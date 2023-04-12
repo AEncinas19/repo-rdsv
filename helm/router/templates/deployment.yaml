@@ -77,7 +77,8 @@ spec:
       volumes:
         - name: config-volume
           hostPath: 
-            path: /TFM/AristacEOS/
+            path: /TFM/AristacEOS/startup-config.cfg
+            type: File
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
