@@ -14,12 +14,15 @@ spec:
   template:
     metadata:
       annotations:
-        k8s.v1.cni.cncf.io/networks: extnet1@eth2
         k8s.v1.cni.cncf.io/networks: '[
           {
             "name": "podnet",
             "interface": "eth1",
             "ips": ["10.0.0.2/24"]
+          },
+          {
+            "name": "extnet",
+            "interface": "eth2"
           }
         ]'
       labels:
