@@ -81,7 +81,7 @@ spec:
       volumes:
         - name: config-volume
           hostPath:
-            path: /home/upm/TFM/OSM/startup-config.cfg
+            path: /home/upm/TFM/AristacEOS/startup-config.cfg
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
