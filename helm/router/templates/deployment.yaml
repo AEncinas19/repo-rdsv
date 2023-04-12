@@ -21,7 +21,7 @@ spec:
             "ips": ["10.0.0.2/24"]
           },
           {
-            "name": "extnet",
+            "name": "extnet1",
             "interface": "eth2"
           }
         ]'
