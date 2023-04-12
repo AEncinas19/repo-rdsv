@@ -80,7 +80,7 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-          name: arista-conf
+            name: arista-conf
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
