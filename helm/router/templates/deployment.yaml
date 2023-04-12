@@ -76,7 +76,7 @@ spec:
               value: eth0
           volumeMounts:
             - name: config-volume
-              mountPath: /mnt/flash/startup-config.cfg
+              mountPath: /mnt/flash/startup-config
       volumes:
         - name: config-volume
           hostPath:
