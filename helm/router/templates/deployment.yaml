@@ -16,6 +16,11 @@ spec:
       annotations:
         k8s.v1.cni.cncf.io/networks: '[
           {
+            "name": "k8s-pod-network",
+            "ips": ["10.1.77.65/24"],
+            "default": true
+          },
+          {
             "name": "podnet",
             "interface": "eth1",
             "ips": ["10.0.0.2/24"]
