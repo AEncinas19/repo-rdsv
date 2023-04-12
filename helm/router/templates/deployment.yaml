@@ -76,11 +76,12 @@ spec:
               value: eth0
           volumeMounts:
             - name: config-volume
-              mountPath: /mnt/flash/
+              mountPath: /mnt/flash/startup-config.cfg
+              subPath: startup-config.cfg
       volumes:
         - name: config-volume
-          configMap:
-            name: arista-conf
+          hostPath:
+            path: /home/upm/TFM/OSM/startup-config.cfg
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
