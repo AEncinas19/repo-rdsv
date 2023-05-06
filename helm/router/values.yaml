@@ -38,7 +38,15 @@ securityContext: {}
 
 service:
   type: NodePort
-  port: 80
+  ports: 
+    - name: ocprometheus
+      port: 8080
+      targetPort: 8080
+      nodePort: 32400
+    - name: gnmic
+      port: 6030
+      targetPort: 6030
+      nodePort: 32401
 
 ingress:
   enabled: false
