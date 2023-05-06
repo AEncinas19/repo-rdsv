@@ -78,7 +78,7 @@ spec:
             - name: config-volume
               mountPath: /mnt/flash/startup-config
             - name: ocprometheus-volume
-              mountPath: /mnt/flash/
+              mountPath: /mnt/flash/ocprometheus.yml
       volumes:
         - name: config-volume
           hostPath:
