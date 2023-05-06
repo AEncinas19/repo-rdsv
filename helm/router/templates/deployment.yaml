@@ -77,10 +77,15 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: /mnt/flash/startup-config
+            - name: ocprometheus-volume
+              mountPath: /mnt/flash/
       volumes:
         - name: config-volume
           hostPath:
             path: /home/upm/TFM/AristacEOS/startup-config.cfg
+        - name: ocprometheus-volume
+          hostPath:
+            path: /home/upm/TFM/AristacEOS/ocprometheus.yml
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
