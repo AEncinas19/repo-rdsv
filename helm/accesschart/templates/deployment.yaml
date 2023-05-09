@@ -46,6 +46,40 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+        - name: cadvisor
+          securityContext:
+            capabilities:
+              add: ["NET_ADMIN"]
+            privileged: true
+          image: gcr.io/cadvisor/cadvisor:latest
+          command: ["sh", "-c", "tail -f /dev/null"]
+          ports:
+          - containerPort: 8080
+          volumeMounts:
+          - name: rootfs-volume
+            mountPath: /rootfs
+            readOnly: true
+          - name: var-run-volume
+            mountPath: /var/run
+          - name: sys-volume
+            mountPath: /sys
+            readOnly: true
+          - name: var-lib-docker-volume
+            mountPath: /var/lib/docker
+            readOnly: true
+        volumes:
+        - name: rootfs-volume
+          hostPath:
+            path: /
+        - name: var-run-volume
+          hostPath:
+            path: /var/run
+        - name: sys-volume
+          hostPath:
+            path: /sys
+        - name: var-lib-docker-volume
+          hostPath:
+            path: /var/lib/docker
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
