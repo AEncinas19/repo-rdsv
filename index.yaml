@@ -3,23 +3,23 @@ entries:
   accesschart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-04-11T13:48:34.507629715+02:00"
+    created: "2023-05-09T13:55:55.209854436+02:00"
     description: A Helm chart for Kubernetes
-    digest: 67b7f1bda58358d9543706ff9bf78731cd1e13c325b8d90f29480804a9472ad3
+    digest: a22d76d628b42486532785f66c5f78df40c77d9ce6cd095264857a10ef4738d8
     name: accesschart
     type: application
     urls:
-    - https://aencinas19.github.io/repo-rdsv/accesschart-0.1.0.tgz
+    - https://AEncinas19.github.io/repo-rdsv/accesschart-0.1.0.tgz
     version: 0.1.0
   router:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-04-11T13:48:34.507934838+02:00"
+    created: "2023-05-09T13:55:55.210449652+02:00"
     description: A Helm chart for Kubernetes
-    digest: 3c6471274ae97100d8da9c26b6025ec982bee9e82515816e8d3a9b364478219b
+    digest: c0bd42140be99a890fd5ecaef7bb2ecbe7c2cdeb98a9e35ff995c1eeb2d79eb5
     name: router
     type: application
     urls:
-    - https://aencinas19.github.io/repo-rdsv/router-0.1.0.tgz
+    - https://AEncinas19.github.io/repo-rdsv/router-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-11T13:48:34.507200939+02:00"
+generated: "2023-05-09T13:55:55.209104856+02:00"
