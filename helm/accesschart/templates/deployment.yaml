@@ -52,8 +52,6 @@ spec:
               add: ["NET_ADMIN"]
             privileged: true
           image: gcr.io/cadvisor/cadvisor:latest
-          ports:
-          - containerPort: 8080
           volumeMounts:
           - name: rootfs-volume
             mountPath: /rootfs
