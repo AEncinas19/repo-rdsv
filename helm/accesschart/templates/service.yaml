@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "accesschart.fullname" . }}
+  name: accesspod
   labels:
     {{- include "accesschart.labels" . | nindent 4 }}
 spec:
