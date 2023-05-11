@@ -52,7 +52,6 @@ spec:
               add: ["NET_ADMIN"]
             privileged: true
           image: gcr.io/cadvisor/cadvisor:latest
-          command: ["sh", "-c", "tail -f /dev/null"]
           ports:
           - containerPort: 8080
           volumeMounts:
