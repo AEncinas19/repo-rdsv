@@ -67,7 +67,7 @@ spec:
           - name: var-lib-docker-volume
             mountPath: /var/lib/docker
             readOnly: true
-        volumes:
+      volumes:
         - name: rootfs-volume
           hostPath:
             path: /
