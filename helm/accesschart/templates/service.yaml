@@ -11,9 +11,5 @@ spec:
       port: {{ index .Values.service.ports 0 "port"}}
       targetPort: {{ index .Values.service.ports 0 "targetPort" }}
       nodePort: {{ index .Values.service.ports 0 "nodePort" }}
-    - name: cadvisor
-      port: 8080
-      targetPort: 8080
-      nodePort: 30200
   selector:
     {{- include "accesschart.selectorLabels" . | nindent 4 }}
