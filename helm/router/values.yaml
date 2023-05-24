@@ -1,6 +1,7 @@
 # Default values for cpechart.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+name: router
 
 replicaCount: 1
 
