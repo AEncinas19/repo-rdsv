@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: router2
   labels:
-    {{- include "router2.labels" . | nindent 4 }}
+    {{- include "cpechart.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -16,4 +16,4 @@ spec:
       targetPort: {{index .Values.service.ports 1 "targetPort" }}
       nodePort: {{index .Values.service.ports 1 "nodePort" }}
   selector:
-    {{- include "router2.selectorLabels" . | nindent 4 }}
+    {{- include "cpechart.selectorLabels" . | nindent 4 }}

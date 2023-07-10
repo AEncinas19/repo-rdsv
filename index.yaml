@@ -3,7 +3,7 @@ entries:
   accesschart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-10T12:07:53.297700243+02:00"
+    created: "2023-07-10T12:33:51.963696991+02:00"
     description: A Helm chart for Kubernetes
     digest: 60a198e821d603f1a059fa4e833311d737e1c134486ba7493a19d41f98907757
     name: accesschart
@@ -14,9 +14,9 @@ entries:
   accesschart2:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-10T12:07:53.298026011+02:00"
+    created: "2023-07-10T12:33:51.964012833+02:00"
     description: A Helm chart for Kubernetes
-    digest: 25d5322071b06ed90d81d0a54cd607f98721485bcbba0bc4bd1ff861d660421b
+    digest: a0f40d5e928fe2bee9fe82d18fe2422db99ffeb71355f4f3a2be9a9ef262aa83
     name: accesschart2
     type: application
     urls:
@@ -25,7 +25,7 @@ entries:
   router:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-10T12:07:53.298390724+02:00"
+    created: "2023-07-10T12:33:51.964425176+02:00"
     description: A Helm chart for Kubernetes
     digest: f183a4f1314abda94c389905dd0d792d1dd0e8a34bf2caead459473c3b2abf4e
     name: router
@@ -36,12 +36,12 @@ entries:
   router2:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-10T12:07:53.298736599+02:00"
+    created: "2023-07-10T12:33:51.964750625+02:00"
     description: A Helm chart for Kubernetes
-    digest: 60323639450b8dd94b9805bdefc2604ce842c827560bc987fda2c35e234ce2f0
+    digest: 2e825e0dd4105a65c9b5bd07d263c4a6a91b151f501a71c476829f75a8f55687
     name: router2
     type: application
     urls:
     - https://aencinas19.github.io/repo-rdsv/router2-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-10T12:07:53.297259833+02:00"
+generated: "2023-07-10T12:33:51.963256646+02:00"

@@ -3,14 +3,14 @@ kind: Deployment
 metadata:
   name: {{ .Values.name }}
   labels:
-    {{- include "router2.labels" . | nindent 4 }}
+    {{- include "cpechart.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "router2.selectorLabels" . | nindent 6 }}
+      {{- include "cpechart.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       annotations:
@@ -26,13 +26,13 @@ spec:
           }
         ]'
       labels:
-        {{- include "router2.selectorLabels" . | nindent 8 }}
+        {{- include "cpechart.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "router2.serviceAccountName" . }}
+      serviceAccountName: {{ include "cpechart.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
