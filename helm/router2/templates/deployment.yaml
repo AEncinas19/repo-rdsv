@@ -1,0 +1,100 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+  labels:
+    {{- include "cpechart.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "cpechart.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        k8s.v1.cni.cncf.io/networks: '[
+          {
+            "name": "podnet",
+            "interface": "eth1",
+            "ips": ["10.0.0.2/24"]
+          },
+          {
+            "name": "extnet1",
+            "interface": "eth2"
+          }
+        ]'
+      labels:
+        {{- include "cpechart.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "cpechart.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            capabilities:
+              add: ["NET_ADMIN"]
+            privileged: true
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          command: ["/sbin/init"]
+          args:
+            - "systemd.setenv=INTFTYPE=eth"
+            - "systemd.setenv=ETBA=1"
+            - "systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT=1"
+            - "systemd.setenv=CEOS=1"
+            - "systemd.setenv=EOS_PLATFORM=ceoslab"
+            - "systemd.setenv=container=docker"
+            - "systemd.setenv=MAPETH0=1"
+            - "systemd.setenv=MGMT_INTF=eth0"
+          stdin: true
+          tty: true
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            - name: INTFTYPE
+              value: eth
+            - name: ETBA
+              value: "1"
+            - name: SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT
+              value: "1"
+            - name: CEOS
+              value: "1"
+            - name: EOS_PLATFORM
+              value: ceoslab
+            - name: container
+              value: docker
+            - name: MAPETH0
+              value: "1"
+            - name: MGMT_INTF
+              value: eth0
+          volumeMounts:
+            - name: config-volume
+              mountPath: /mnt/flash/startup-config
+            - name: ocprometheus-volume
+              mountPath: /mnt/flash/ocprometheus.yml
+      volumes:
+        - name: config-volume
+          hostPath:
+            path: /home/upm/TFM/AristacEOS/startup-config.cfg
+        - name: ocprometheus-volume
+          hostPath:
+            path: /home/upm/TFM/AristacEOS/ocprometheus.yml
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

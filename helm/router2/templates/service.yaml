@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: router2
+  labels:
+    {{- include "cpechart.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: ocprometheus
+      port: {{index .Values.service.ports 0 "port" }}
+      targetPort: {{index .Values.service.ports 0 "targetPort" }}
+      nodePort: {{index .Values.service.ports 0 "nodePort" }}
+    - name: gnmic
+      port: {{index .Values.service.ports 1 "port" }}
+      targetPort: {{index .Values.service.ports 1 "targetPort" }}
+      nodePort: {{index .Values.service.ports 1 "nodePort" }}
+  selector:
+    {{- include "cpechart.selectorLabels" . | nindent 4 }}

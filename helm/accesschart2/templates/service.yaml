@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: accesspod2
+  labels:
+    {{- include "accesschart.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: prom-node-exporter
+      port: {{ index .Values.service.ports 0 "port"}}
+      targetPort: {{ index .Values.service.ports 0 "targetPort" }}
+      nodePort: {{ index .Values.service.ports 0 "nodePort" }}
+  selector:
+    {{- include "accesschart.selectorLabels" . | nindent 4 }}

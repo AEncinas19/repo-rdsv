@@ -3,23 +3,45 @@ entries:
   accesschart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-09T13:55:55.209854436+02:00"
+    created: "2023-07-10T11:36:55.037759022+02:00"
     description: A Helm chart for Kubernetes
-    digest: a22d76d628b42486532785f66c5f78df40c77d9ce6cd095264857a10ef4738d8
+    digest: 60a198e821d603f1a059fa4e833311d737e1c134486ba7493a19d41f98907757
     name: accesschart
     type: application
     urls:
-    - https://AEncinas19.github.io/repo-rdsv/accesschart-0.1.0.tgz
+    - https://cuenta-git.github.io/repo-rdsv/accesschart-0.1.0.tgz
+    version: 0.1.0
+  accesschart2:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-07-10T11:36:55.038288627+02:00"
+    description: A Helm chart for Kubernetes
+    digest: 9c475f3a0df65f96401b6356359a0f378d8c416a4b49e81b64f1e5af95f8e124
+    name: accesschart2
+    type: application
+    urls:
+    - https://cuenta-git.github.io/repo-rdsv/accesschart2-0.1.0.tgz
     version: 0.1.0
   router:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-09T13:55:55.210449652+02:00"
+    created: "2023-07-10T11:36:55.039427518+02:00"
     description: A Helm chart for Kubernetes
-    digest: c0bd42140be99a890fd5ecaef7bb2ecbe7c2cdeb98a9e35ff995c1eeb2d79eb5
+    digest: f183a4f1314abda94c389905dd0d792d1dd0e8a34bf2caead459473c3b2abf4e
     name: router
     type: application
     urls:
-    - https://AEncinas19.github.io/repo-rdsv/router-0.1.0.tgz
+    - https://cuenta-git.github.io/repo-rdsv/router-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-09T13:55:55.209104856+02:00"
+  router2:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-07-10T11:36:55.039998763+02:00"
+    description: A Helm chart for Kubernetes
+    digest: d06057f634cb84b79d66ff0186d3328da32a1567f744d815039a7ce19f3f2155
+    name: router2
+    type: application
+    urls:
+    - https://cuenta-git.github.io/repo-rdsv/router2-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-07-10T11:36:55.03693436+02:00"
