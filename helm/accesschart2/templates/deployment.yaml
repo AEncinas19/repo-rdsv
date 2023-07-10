@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: {{ .Values.name }}
   labels:
-    {{- include "accesschart.labels" . | nindent 4 }}
+    {{- include "accesschart2.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "accesschart.selectorLabels" . | nindent 6 }}
+      {{- include "accesschart2.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       annotations:
         k8s.v1.cni.cncf.io/networks: '[
             {
-              "name": "podnet",
+              "name": "podnet2",
               "interface": "eth1",
               "ips": ["10.0.0.1/24"]
             },
@@ -26,13 +26,13 @@ spec:
             }
           ]'
       labels:
-        {{- include "accesschart.selectorLabels" . | nindent 8 }}
+        {{- include "accesschart2.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "accesschart.serviceAccountName" . }}
+      serviceAccountName: {{ include "accesschart2.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:

@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: {{ .Values.name }}
   labels:
-    {{- include "cpechart.labels" . | nindent 4 }}
+    {{- include "router2.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "cpechart.selectorLabels" . | nindent 6 }}
+      {{- include "router2.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       annotations:
         k8s.v1.cni.cncf.io/networks: '[
           {
-            "name": "podnet",
+            "name": "podnet2",
             "interface": "eth1",
             "ips": ["10.0.0.2/24"]
           },
@@ -26,13 +26,13 @@ spec:
           }
         ]'
       labels:
-        {{- include "cpechart.selectorLabels" . | nindent 8 }}
+        {{- include "router2.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "cpechart.serviceAccountName" . }}
+      serviceAccountName: {{ include "router2.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
